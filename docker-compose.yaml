@@ -1,0 +1,14 @@
+version: '3'
+services:
+  db:
+    image: mysql:latest
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: 1234Ab*
+      MYSQL_ROOT_HOST: "localhost"
+      MYSQL_DATABASE: app
+      MYSQL_USER: ed
+      MYSQL_PASSWORD: 1234Ab*
+      MYSQL_ALLOW_EMPTY_PASSWORD: 1
+    ports:
+      - "3306:3306"
