@@ -8,14 +8,14 @@ Api desarrollada en Laravel desplegada en Heroku
 
 Base de datos MySql alojada en nube
 
-**-💻API desplegada**
+**-💻[Remote] API desplegada**
 ```
 https://tptest-57c6370c6944.herokuapp.com/
 
 ```
 
 
-**-💻Servir la aplicación:**
+**-💻[Local] Servir la aplicación:**
 
 
 -Clonar Repositorio
