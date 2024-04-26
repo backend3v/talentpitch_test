@@ -152,7 +152,9 @@ POST companies/generate
 POST challenges/generate
 ```
 
-Ejemplos de uso:
+
+**-Ejemplos de uso:**
+
 
 EJEMPLO 1
 
