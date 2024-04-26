@@ -290,11 +290,12 @@ Output:
 ```
 Api (Tests\Feature\Api)
  ✔ Home
- ✔ Create user
- ✔ Create program
- ✔ Create challenges
- ✔ Create companies
- ✔ Create partiipants
+ ✔ Crud user
+ ✔ Crud program
+ ✔ Crud challenges
+ ✔ Crud companies
+ ✔ Crud partiipants
+ ✔ Create bad user
 
-OK (6 tests, 21 assertions)
+OK (7 tests, 22 assertions)
 ```

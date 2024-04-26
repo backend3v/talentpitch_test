@@ -17,7 +17,7 @@ class ApiTest extends TestCase
 
         $response->assertStatus(200);
     }
-    public function test_create_user(): void
+    public function test_crud_user(): void
     {
         
         $response = $this->post('/users', ['name' => 'Sally','email' => 'sally@mail.com']);
@@ -32,7 +32,7 @@ class ApiTest extends TestCase
         ]);
         $response_delete->assertStatus(200);
     }
-    public function test_create_program(): void
+    public function test_crud_program(): void
     {
         
         $response = $this->post('/programs', ['name' => 'TestFest']);
@@ -47,7 +47,7 @@ class ApiTest extends TestCase
         ]);
         $response_delete->assertStatus(200);
     }
-    public function test_create_challenges(): void
+    public function test_crud_challenges(): void
     {
         
         $response = $this->post('/challenges', ['title' => 'Test','difficulty' => 'low']);
@@ -62,7 +62,7 @@ class ApiTest extends TestCase
         ]);
         $response_delete->assertStatus(200);
     }
-    public function test_create_companies(): void
+    public function test_crud_companies(): void
     {
         
         $response = $this->post('/companies', ['name' => 'SallySofware','industry' => 'tech']);
@@ -77,7 +77,7 @@ class ApiTest extends TestCase
         ]);
         $response_delete->assertStatus(200);
     }
-    public function test_create_partiipants(): void
+    public function test_crud_partiipants(): void
     {
         $response_company = $this->post('/companies', ['name' => 'SallySofware','industry' => 'tech']);
         $company = json_decode($response_company->getContent());
@@ -98,15 +98,10 @@ class ApiTest extends TestCase
         $response_delete_program->assertStatus(200);
         $response_delete->assertStatus(200);
     }
-    // public function test_create_duplicated_user(): void
-    // {
-    //     $response = $this->post('/users', ['name' => 'Sally','email' => 'sally@mail.com']);
-    //     $response->assertStatus(400);
-    // }
-    // public function test_create_bad_user(): void
-    // {
-    //     $response = $this->post('/users', ['email' => 'sally@mail.com']);
+    public function test_create_bad_user(): void
+    {
+        $response = $this->post('/users', ['email' => 'sally@mail.com']);
 
-    //     $response->assertStatus(400);
-    // }
+        $response->assertStatus(400);
+    }
 }
