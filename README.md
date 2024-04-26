@@ -36,6 +36,7 @@ php artisan serve
 **-🚎Rutas API**
 
 CHALLENGE ENTTITY
+
 Properties:
         "name": "string",-Required
         "level": "[low,medium,high]",
@@ -51,6 +52,7 @@ POST challenges/generate
 
 
 COMPANY ENTITY
+
 Properties:
         "name": "string",-Required
         "contact_name": "string",
@@ -68,6 +70,7 @@ POST companies/generate
 
 
 PROGRAM ENTITY
+
 Properties:
         "name": "string",-Required
         "date": "string",
@@ -85,6 +88,7 @@ POST programs/generate
 
 
 USER ENTITY
+
 Properties:
         "name": "string",-Required
         "email": "string",
@@ -100,6 +104,7 @@ POST users/generate
 
 
 PROGRAM PARTICIPANTS ENTITY
+
 Properties:
         "participant": "string",-Required
         "type":  "['user', 'challenge','company']",
