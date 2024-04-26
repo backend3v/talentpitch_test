@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('challenges', function (Blueprint $table) {
             $table->timestamps();
             $table->increments('id');
-            $table->string('name')->unique()->nullable(false);
-            $table->enum('level', array('high', 'medium','low'))->nullable();
+            $table->string('title')->unique()->nullable(false);
+            $table->enum('difficulty', array('high', 'medium','low'))->nullable();
             $table->mediumText('description')->nullable();
         });
     }

@@ -28,7 +28,7 @@ class ChallengeController extends Controller
         $keyword = $request->keyword;
         $cantity = $request->cantity;
         $custom  = new GenerateService();
-        $result = $custom->get_faker($keyword,$cantity,"(name,level[low,medium,high],description)","challenges");
+        $result = $custom->get_faker($keyword,$cantity,"(title,level[low,medium,high],description)","challenges");
         foreach ($result as $k => $v) {
             $programs = Challenge::create($v);
         }

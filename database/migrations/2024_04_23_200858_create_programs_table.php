@@ -15,7 +15,8 @@ return new class extends Migration
             $table->increments('id');
             $table->timestamps();
             $table->string('name')->unique()->nullable(false);
-            $table->string('date')->nullable();
+            $table->date('start_date')->nullable();
+            $table->date('end_date')->nullable();
             $table->string('location')->nullable();;
             $table->string('frequency')->nullable();;
             $table->mediumText('description')->nullable();

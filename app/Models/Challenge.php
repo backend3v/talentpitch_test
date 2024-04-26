@@ -9,8 +9,8 @@ class Challenge extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'name',
-        'level',
+        'title',
+        'difficulty',
         'description'
     ];
 }

@@ -41,7 +41,7 @@ CHALLENGE ENTTITY
 
 Properties:
 ```
-        "name": "string",-Required
+        "title": "string",-Required
         "level": "[low,medium,high]",
         "desciption": "string"
 ```
@@ -64,7 +64,8 @@ Properties:
         "name": "string",-Required
         "contact_name": "string",
         "contact": "string",
-        "sector": "string"
+        "industry": "string",
+        "location": "string"
 ```
 
 
@@ -84,7 +85,8 @@ PROGRAM ENTITY
 Properties:
 ```
         "name": "string",-Required
-        "date": "string",
+        "start_date": "date",
+        "end_date": "date",
         "location": "string",
         "frequency": "string",
         "description": "string"
@@ -165,26 +167,54 @@ POST /programs/generate
 BODY 
 ```
 {
-    "keyword":"cars", // Palabra clave con la que el servicio de IA externo contextualiza las propiedades de la entidad a crear
-    "cantity":"2" // Cantidad de Programas a crear
+    "keyword":"Motorcycles&food", // Palabra clave con la que el servicio de IA externo contextualiza las propiedades de la entidad a crear
+    "cantity":"5" // Cantidad de Programas a crear
 }
 ```
 RESPONSE
 
 ```
-"program1": {
-    "name": "Car Show at the Park",
-    "date": "July 10, 2021",
-    "location": "Central Park",
-    "frequency": "Annual",
-    "description": "Join us for a day of classic and modern cars at Central Park. There will be food trucks, live music, and a chance to win prizes. All car enthusiasts are welcome!"
-},
-"program2": {
-    "name": "Drag Racing Night",
-    "date": "August 15, 2021",
-    "location": "Speedway Raceway",
-    "frequency": "Monthly",
-    "description": "Experience the thrill of drag racing at Speedway Raceway. Bring your own car or just come to watch the action. Food and drinks will be available for purchase. Don't miss out on this high-speed event!"
+{
+    "program1": {
+        "name": "Biker Brunch",
+        "start_date": "2021-07-10",
+        "end_date": "2021-07-10",
+        "location": "The Biker's Cafe",
+        "frequency": "One-time event",
+        "description": "Join us for a delicious brunch at The Biker's Cafe, where you can enjoy a variety of food options while surrounded by fellow motorcycle enthusiasts."
+    },
+    "program2": {
+        "name": "Ride & Dine",
+        "start_date": "2021-07-15",
+        "end_date": "2021-07-15",
+        "location": "The Twisty Roads",
+        "frequency": "Monthly",
+        "description": "Take a scenic ride through the twisty roads and end the day with a delicious dinner at a local restaurant. Open to all levels of riders."
+    },
+    "program3": {
+        "name": "Biker BBQ",
+        "start_date": "2021-07-20",
+        "end_date": "2021-07-20",
+        "location": "The Biker's Clubhouse",
+        "frequency": "Bi-weekly",
+        "description": "Join us for a BBQ at our clubhouse, where you can meet other motorcycle enthusiasts and enjoy some delicious food hot off the grill."
+    },
+    "program4": {
+        "name": "Cruiser Coffee Ride",
+        "start_date": "2021-07-25",
+        "end_date": "2021-07-25",
+        "location": "The Coastal Route",
+        "frequency": "Weekly",
+        "description": "Start your Sunday morning with a scenic ride along the coast and end it with a cup of coffee and some pastries at a local cafe."
+    },
+    "program5": {
+        "name": "Track Day & Food Trucks",
+        "start_date": "2021-07-30",
+        "end_date": "2021-07-30",
+        "location": "The Race Track",
+        "frequency": "One-time event",
+        "description": "Experience the thrill of riding on a race track and then refuel with some delicious food from various food trucks parked at the event."
+    }
 }
 ```
 
@@ -196,7 +226,7 @@ POST /companies/generate
 BODY 
 ```
 {
-    "keyword":"soccer", // Palabra clave con la que el servicio de IA externo contextualiza las propiedades de la entidad a crear
+    "keyword":"tvWithSportInColombia", // Palabra clave con la que el servicio de IA externo contextualiza las propiedades de la entidad a crear
     "cantity":"2"  // Cantidad de Programas a crear
 }
 ```
@@ -204,16 +234,18 @@ RESPONSE
 ```
 {
     "company1": {
-        "name": "Adidas",
-        "contact_name": "John Smith",
-        "contact": "john.smith@adidas.com",
-        "sector": "Sportswear"
+        "name": "TV Deportes Colombia",
+        "contact_name": "Juan Perez",
+        "contact": "j.perez@tvdeportes.com",
+        "industry": "Media",
+        "location": "Bogota, Colombia"
     },
     "company2": {
-        "name": "Nike",
-        "contact_name": "Jane Doe",
-        "contact": "jane.doe@nike.com",
-        "sector": "Sportswear"
+        "name": "Colombia Sports TV",
+        "contact_name": "Maria Rodriguez",
+        "contact": "m.rodriguez@colombiasportstv.com",
+        "industry": "Media",
+        "location": "Medellin, Colombia"
     }
 }
 ```
@@ -225,7 +257,7 @@ POST /challenges/generate
 BODY 
 ```
 {
-    "keyword":"software", // Palabra clave con la que el servicio de IA externo contextualiza las propiedades de la entidad a crear
+    "keyword":"softwareWithBurguer", // Palabra clave con la que el servicio de IA externo contextualiza las propiedades de la entidad a crear
     "cantity":"2"  // Cantidad de Programas a crear
 }
 ```
@@ -233,14 +265,14 @@ RESPONSE
 ```
 {
     "challenge1": {
-        "name": "Memory Management",
-        "level": "high",
-        "description": "This challenge involves efficiently managing the allocation and deallocation of memory in a software system. It requires a deep understanding of data structures and algorithms to optimize memory usage and prevent memory leaks."
+        "title": "Burguer Building",
+        "level": "medium",
+        "description": "Create a software that allows users to build their own custom burguer with various toppings and sauces."
     },
     "challenge2": {
-        "name": "Concurrency",
-        "level": "medium",
-        "description": "Concurrency is the ability of a software system to handle multiple tasks simultaneously. This challenge involves designing and implementing a system that can handle concurrent processes without causing errors or conflicts. It requires knowledge of threading, synchronization, and parallel programming."
+        "title": "Burguer Delivery Tracker",
+        "level": "high",
+        "description": "Develop a software that tracks the delivery of burguers from the restaurant to the customer's location, providing real-time updates and estimated delivery time."
     }
 }
 ```

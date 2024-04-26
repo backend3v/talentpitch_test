@@ -17,7 +17,8 @@ return new class extends Migration
             $table->string('name')->unique()->nullable(false);
             $table->string('contact_name')->nullable();
             $table->string('contact')->nullable();
-            $table->string('sector')->nullable();
+            $table->string('location')->nullable();
+            $table->string('industry')->nullable();
         });
     }
 

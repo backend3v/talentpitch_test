@@ -50,36 +50,36 @@ class ApiTest extends TestCase
     public function test_create_challenges(): void
     {
         
-        $response = $this->post('/challenges', ['name' => 'Test','level' => 'low']);
+        $response = $this->post('/challenges', ['title' => 'Test','difficulty' => 'low']);
         $obj = json_decode($response->getContent());
         $path = '/challenges/'.$obj->id;
-        $response_patch = $this->patch($path, ['level' => 'medium']);
+        $response_patch = $this->patch($path, ['difficulty' => 'medium']);
         $response_delete = $this->delete($path);
         $response->assertStatus(201);
         $response_patch->assertStatus(200);
         $response_patch->assertJson([
-            'level' => 'medium',
+            'difficulty' => 'medium',
         ]);
         $response_delete->assertStatus(200);
     }
     public function test_create_companies(): void
     {
         
-        $response = $this->post('/companies', ['name' => 'SallySofware','sector' => 'tech']);
+        $response = $this->post('/companies', ['name' => 'SallySofware','industry' => 'tech']);
         $obj = json_decode($response->getContent());
         $path = '/companies/'.$obj->id;
-        $response_patch = $this->patch($path, ['sector' => 'software']);
+        $response_patch = $this->patch($path, ['industry' => 'software']);
         $response_delete = $this->delete($path);
         $response->assertStatus(201);
         $response_patch->assertStatus(200);
         $response_patch->assertJson([
-            'sector' => 'software'
+            'industry' => 'software'
         ]);
         $response_delete->assertStatus(200);
     }
     public function test_create_partiipants(): void
     {
-        $response_company = $this->post('/companies', ['name' => 'SallySofware','sector' => 'tech']);
+        $response_company = $this->post('/companies', ['name' => 'SallySofware','industry' => 'tech']);
         $company = json_decode($response_company->getContent());
         $id_company = $company->id;
         $response_program = $this->post('/programs', ['name' => 'TestFest','location' => 'Virtual']);

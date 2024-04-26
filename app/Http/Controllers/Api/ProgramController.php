@@ -27,7 +27,7 @@ class ProgramController extends Controller
         $keyword = $request->keyword;
         $cantity = $request->cantity;
         $custom  = new GenerateService();
-        $result = $custom->get_faker($keyword,$cantity,"(name,date,location,frequency,description)","programs");
+        $result = $custom->get_faker($keyword,$cantity,"(name,start_date[YYYY-MM-DD],end_date[YYYY-MM-DD],location,frequency,description)","programs");
         foreach ($result as $k => $v) {
             //Log::channel('stderr')->info($v);
             Log::channel('stderr')->info("_________________________________");
