@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Models\Company;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
+use App\Library\Services\GenerateService;
 
 class CompanyController extends Controller
 {
@@ -20,15 +22,16 @@ class CompanyController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create(Request $request)
     {
+        Log::channel('stderr')->info("222");
         Log::channel('stderr')->info($request->all());
         $keyword = $request->keyword;
         $cantity = $request->cantity;
         $custom  = new GenerateService();
-        $result = $custome->get_faker($keyword,$cantity,"(name,contact_name,contact,sector)","companies");
+        $result = $custom->get_faker($keyword,$cantity,"(name,contact_name,contact,sector)","companies");
         foreach ($result as $k => $v) {
-            $programs = Program::create($v);
+            $programs = Company::create($v);
         }
         return response()->json($result, 201);
     }

@@ -16,7 +16,7 @@ return new class extends Migration
             $table->increments('id');
             $table->string('name')->unique()->nullable(false);
             $table->enum('level', array('high', 'medium','low'))->nullable();
-            $table->mediumText('desciption')->nullable();
+            $table->mediumText('description')->nullable();
         });
     }
 
