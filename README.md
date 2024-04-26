@@ -35,7 +35,7 @@ php artisan serve
 ```
 **-🚎Rutas API**
 
-Descargar coleccion de Postman [TPTest Collection](https://drive.google.com/file/d/1AIHG_EG2yddsiLsdml59oaWy23fBcfPz/view?usp=drive_link)
+Descargar coleccion de Postman [TPTest Collection](https://drive.google.com/file/d/1kNKaEXtLGx-45PipHm1hqOwRWwgKUJ8w/view?usp=sharing)
 
 CHALLENGE ENTTITY
 
