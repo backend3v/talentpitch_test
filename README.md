@@ -118,7 +118,8 @@ PATCH programs/participants/{id}
 ```
 
 
-**-🏭 Faker **
+**-🏭Faker**
+
 
 Disponible para las entidades:
 USER
