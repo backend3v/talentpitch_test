@@ -38,9 +38,13 @@ php artisan serve
 CHALLENGE ENTTITY
 
 Properties:
+```
         "name": "string",-Required
         "level": "[low,medium,high]",
         "desciption": "string"
+```
+
+
 ```
 GET|HEAD challenges 
 POST challenges 
@@ -54,10 +58,14 @@ POST challenges/generate
 COMPANY ENTITY
 
 Properties:
+```
         "name": "string",-Required
         "contact_name": "string",
         "contact": "string",
         "sector": "string"
+```
+
+
 ```
 GET|HEAD companies 
 POST companies 
@@ -72,11 +80,14 @@ POST companies/generate
 PROGRAM ENTITY
 
 Properties:
+```
         "name": "string",-Required
         "date": "string",
         "location": "string",
         "frequency": "string",
         "description": "string"
+```
+
 ```
 GET|HEAD programs 
 POST programs 
@@ -90,9 +101,12 @@ POST programs/generate
 USER ENTITY
 
 Properties:
+```
         "name": "string",-Required
         "email": "string",
         "password": "string"
+```
+
 ```
 GET|HEAD users 
 POST users 
@@ -106,9 +120,12 @@ POST users/generate
 PROGRAM PARTICIPANTS ENTITY
 
 Properties:
+```
         "participant": "string",-Required
         "type":  "['user', 'challenge','company']",
         "program": "string"
+```
+
 ```
 GET|HEAD programs/participants 
 POST programs/participants 
@@ -147,6 +164,8 @@ BODY
 }
 ```
 RESPONSE
+
+```
 "program1": {
     "name": "Car Show at the Park",
     "date": "July 10, 2021",
@@ -161,7 +180,7 @@ RESPONSE
     "frequency": "Monthly",
     "description": "Experience the thrill of drag racing at Speedway Raceway. Bring your own car or just come to watch the action. Food and drinks will be available for purchase. Don't miss out on this high-speed event!"
 }
-
+```
 
 
 EJEMPLO 2
@@ -174,6 +193,7 @@ BODY
 }
 ```
 RESPONSE
+```
 {
     "company1": {
         "name": "Adidas",
@@ -188,6 +208,7 @@ RESPONSE
         "sector": "Sportswear"
     }
 }
+```
 
 EJEMPLO 3
 POST /challenges/generate
@@ -199,6 +220,7 @@ BODY
 }
 ```
 RESPONSE
+```
 {
     "challenge1": {
         "name": "Memory Management",
@@ -211,6 +233,7 @@ RESPONSE
         "description": "Concurrency is the ability of a software system to handle multiple tasks simultaneously. This challenge involves designing and implementing a system that can handle concurrent processes without causing errors or conflicts. It requires knowledge of threading, synchronization, and parallel programming."
     }
 }
+```
 
 **-✅ Testing API**
 
