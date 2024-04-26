@@ -155,7 +155,9 @@ POST challenges/generate
 Ejemplos de uso:
 
 EJEMPLO 1
+
 POST /programs/generate
+
 BODY 
 ```
 {
@@ -184,7 +186,9 @@ RESPONSE
 
 
 EJEMPLO 2
+
 POST /companies/generate
+
 BODY 
 ```
 {
@@ -211,7 +215,9 @@ RESPONSE
 ```
 
 EJEMPLO 3
+
 POST /challenges/generate
+
 BODY 
 ```
 {
